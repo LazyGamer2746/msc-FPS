@@ -18,17 +18,26 @@ public class FPController : MonoBehaviour
     public float maxPitch = 70.0f;
     public float minPitch = -70.0f;
 
+    public GameObject Weapon1;
+    public GameObject Weapon2;
+    private int currentWeapon;
+
     private Vector3 jumpDir;
     private Rigidbody rb;
 
     // Start is called before the first frame update
     void Start()
     {
+        
         rb = GetComponent<Rigidbody>();
         jumpDir = transform.up;
 
         Cursor.lockState = CursorLockMode.Locked;
         Cursor.visible = false;
+
+        currentWeapon = 1;
+        Weapon1.SetActive(true);
+        Weapon2.SetActive(false);
     }
 
     // Update is called once per frame
@@ -68,6 +77,22 @@ public class FPController : MonoBehaviour
         {
             rb.AddForce(jumpForce * jumpDir, ForceMode.Impulse);
         }
+
+
+        if (Input.GetKeyDown(KeyCode.Alpha1) && currentWeapon !=1)
+        {
+            currentWeapon = 1;
+            Weapon1.SetActive(true);
+            Weapon2.SetActive(false);
+        }
+        
+        else if (Input.GetKeyDown(KeyCode.Alpha2) && currentWeapon != 2)
+        {
+            currentWeapon = 2;
+            Weapon1.SetActive(false);
+            Weapon2.SetActive(true);
+        }
+
     }
 
 //precondition: angle is between 0 and 360
