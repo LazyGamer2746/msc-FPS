@@ -25,8 +25,19 @@ public class Projectile : MonoBehaviour
 
     void OnCollisionEnter(Collision collision)
     {
+        Enemy hitEnemy = collision.gameObject.GetComponent<Enemy>();
+        if (hitEnemy != null)
+        {
+            float finalDamage = Damage;
 
-        Debug.Log($"Hit Object {collision.gameObject.transform.name}");
+            // Boost if adrenaline active
+            if (PlayerHealth.adrenaline >= 0)
+                finalDamage *= 1f + (PlayerHealth.adrenaline / 100f);
+
+            hitEnemy.TakeDamage(finalDamage);
+        }
+
         Destroy(gameObject);
     }
+
 }

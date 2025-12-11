@@ -58,11 +58,12 @@ public class FPController : MonoBehaviour
         rb.velocity = vec;
 
         transform.localEulerAngles += new Vector3(
-            0,
-            yaw * yawSpeed * Time.deltaTime,
-            0);
-        
-        float pitchDelta = -1 * pitch * pitchSpeed * Time.deltaTime;
+        0,
+        yaw * yawSpeed * Time.unscaledDeltaTime,
+        0);
+
+
+        float pitchDelta = -1 * pitch * pitchSpeed * Time.unscaledDeltaTime;
         float newPitch = Camera.main.transform.localEulerAngles.x + pitchDelta;
         newPitch = AngleWithin180(newPitch);
 
