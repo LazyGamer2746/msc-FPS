@@ -9144,7 +9144,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1191934520}
-  spawnInterval: 1
+  spawnInterval: 3
   spawnPoint: {fileID: 1317106093}
 --- !u!43 &1280183040
 Mesh:
@@ -11184,7 +11184,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   enemyPrefab: {fileID: 1815993138}
-  spawnInterval: 4
+  spawnInterval: 3
   spawnPoint: {fileID: 1317106093}
 --- !u!1 &1871656305 stripped
 GameObject:
@@ -12235,9 +12235,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   maxHP: 100
   currentHP: 100
-  adrenalineToActivate: 50
-  adrenalineSpeedBoost: 10
-  adrenalineDamageBoost: 10
+  adrenalineToActivate: 200
+  adrenalineSpeedBoost: 5
+  adrenalineDamageBoost: 5
 --- !u!1 &2111574168
 GameObject:
   m_ObjectHideFlags: 0
